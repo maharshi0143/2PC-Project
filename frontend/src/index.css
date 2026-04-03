@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #122230;
+}
+
+code {
+  font-family: "Cascadia Code", Consolas, monospace;
+}

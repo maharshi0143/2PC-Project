@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
+:root {
+  --bg-top: #f6f8ef;
+  --bg-bottom: #d8ebe3;
+  --surface: rgba(255, 255, 255, 0.75);
+  --text: #122230;
+  --accent: #0c7f66;
+  --accent-dark: #095a48;
+  --danger: #a93f28;
+  --ok: #0b856b;
+  --border: rgba(18, 34, 48, 0.18);
+  --shadow: 0 16px 40px rgba(14, 32, 41, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.layout {
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(12, 127, 102, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 15%, rgba(169, 63, 40, 0.12), transparent 35%),
+    linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+  padding: 2rem 1rem 2.5rem;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.hero,
+.panel {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  animation: reveal 450ms ease both;
+}
+
+.hero {
+  padding: 1.4rem 1.5rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+}
+
+.hero p {
+  margin: 0.7rem 0 0;
+  max-width: 72ch;
+  line-height: 1.45;
+}
+
+.connection-row {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.pill {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.pill.online {
+  background: rgba(11, 133, 107, 0.18);
+  border-color: rgba(11, 133, 107, 0.4);
+}
+
+.pill.offline {
+  background: rgba(169, 63, 40, 0.16);
+  border-color: rgba(169, 63, 40, 0.36);
+}
+
+.retries {
+  font-size: 0.86rem;
+}
+
+.panel {
+  padding: 1.2rem;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: 1fr 130px auto;
+  gap: 0.65rem;
+  align-items: end;
+  margin-bottom: 0.7rem;
+}
+
+.item-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.6rem 0.75rem;
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: 3px solid rgba(12, 127, 102, 0.22);
+  outline-offset: 1px;
+}
+
+.form-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.65rem;
+}
+
+button {
+  border-radius: 12px;
+  border: 0;
+  padding: 0.58rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: #fff;
+}
+
+.muted-btn {
+  background: rgba(18, 34, 48, 0.08);
+  color: var(--text);
+}
+
+.error-text {
+  margin: 0.8rem 0 0;
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chaos-config {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+}
+
+.timeline-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.developer-mode-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.developer-mode-control input {
+  width: 16px;
+  height: 16px;
+}
+
+.phase-speed-control {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.9rem;
+}
+
+.transaction-list {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.transaction-item {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 0.85rem 0.9rem;
+  background: rgba(255, 255, 255, 0.78);
+  animation: slideIn 300ms ease both;
+}
+
+.transaction-item header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.transaction-item h3 {
+  margin: 0;
+  font-size: 0.96rem;
+  word-break: break-all;
+}
+
+.status {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.status.preparing,
+.status.committing {
+  color: #6a4f00;
+  border-color: rgba(211, 164, 20, 0.45);
+  background: rgba(245, 215, 116, 0.26);
+}
+
+.status.aborting {
+  color: #7d2a1e;
+  border-color: rgba(169, 63, 40, 0.45);
+  background: rgba(228, 145, 125, 0.22);
+}
+
+.status.committed {
+  color: var(--ok);
+  border-color: rgba(11, 133, 107, 0.4);
+  background: rgba(11, 133, 107, 0.1);
+}
+
+.status.aborted,
+.status.inventory_chaos_triggered,
+.status.orders_chaos_triggered {
+  color: var(--danger);
+  border-color: rgba(169, 63, 40, 0.4);
+  background: rgba(169, 63, 40, 0.08);
+}
+
+.updated-at {
+  margin: 0.55rem 0;
+  font-size: 0.84rem;
+  opacity: 0.86;
+}
+
+.history {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.history span {
+  font-size: 0.76rem;
+  border: 1px dashed var(--border);
+  border-radius: 999px;
+  padding: 0.18rem 0.42rem;
+}
+
+.history span.preparing,
+.history span.committing {
+  background: rgba(245, 215, 116, 0.2);
+  border-color: rgba(211, 164, 20, 0.45);
+}
+
+.history span.aborting,
+.history span.aborted,
+.history span.inventory_chaos_triggered,
+.history span.orders_chaos_triggered {
+  background: rgba(228, 145, 125, 0.2);
+  border-color: rgba(169, 63, 40, 0.45);
+}
+
+.history span.committed {
+  background: rgba(11, 133, 107, 0.12);
+  border-color: rgba(11, 133, 107, 0.4);
+}
+
+.chaos-btn {
+  margin-top: 0.65rem;
+  background: linear-gradient(135deg, #ce6d3f, #a93f28);
+  color: #fff;
+}
+
+.empty-state {
+  margin: 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 780px) {
+  .item-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
