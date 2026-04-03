@@ -2,6 +2,10 @@
 
 This project implements a distributed transaction workflow using the Two-Phase Commit (2PC) protocol across microservices.
 
+## Video Demo
+
+- https://drive.google.com/file/d/1aNOLeYqH6WOd7F1WEOTQYvzk23hpPXaR/view?usp=sharing
+
 ## Services
 
 - `coordinator`: drives the 2PC protocol, writes WAL, exposes transaction APIs, broadcasts WebSocket updates.
